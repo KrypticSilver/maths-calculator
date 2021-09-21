@@ -1,60 +1,42 @@
+line_break = "/" * 51
+
+
 class Matricies:
     def __init__(self, rows, columns):
         self.rows = rows
         self.columns = columns
 
 
-    def get_values(self):
-        for i in range(self.rows):
-            for j in range(self.columns):
-                try:
-                    value = int(input(f"What would you like the value of the matrix at [{self.rows},{self.columns}] "
-                                      f"to be?: "))
-                except:
-                    None
+def compute_matrix():
+    print("\n// Operation types available for matricies include:\n -Addition\n- Subtraction \n- Multiplication")
+    print("\n // Also note that only two matricies can be involved in an operation together.")
 
-                if type(value) is not int:
-                    print("Invalid input detected. Input must be an integer.")
-                    continue
+    operation = input("\nGreat, what type of operation do you want to perform?: ").lower()
 
+    if operation == "addition":
+        pass
 
+    elif operation == "subraction":
+        pass
 
-
-
-def solve_matricies():
-    while True:
-        try:
-            rows = int(input("How many rows are in your matrix?: "))
-        except:
-            None
-
-        if type(rows) is not int:
-            print("Invalid input detected. Input must be an integer.")
-            continue
-
-        try:
-            columns = int(input("How many columns are in your matrix?: "))
-        except:
-            None
-
-        if type(columns) is not int:
-            print("Invalid input detected. Input must be an integer.")
-            continue
-
-        matrix = Matricies(rows, columns)
-
+    elif operation == "multiplication":
+        pass
 
 
 while True:
-    keep_solving = input("Do you want to solve an equation or quit? (S/C): ").upper()
+    keep_solving = input("Do you want to solve an equation or quit? (S/C): ").lower()
 
-    if keep_solving == "S":
-        computation_type = input("What type of problem do you want so solve(e.g. matricies)?:\n")
+    if keep_solving == "s":
+        print("\n// Examples of problems that can be solved include:\n- Matricies")
+        computation_type = input("\nWhat type of problem do you want so solve?: ")
 
-        if computation_type == "matricies":
-            solve_matricies()
+        if computation_type == "matricies" or computation_type == "matrix":
+            compute_matrix()
 
-    elif keep_solving == "Q":
+        else:
+            print(f"The type of computation '{computation_type}' is unavailable, please try again.")
+
+    elif keep_solving == "q":
         break
 
     else:
